@@ -205,7 +205,7 @@ def command_to_iscp(command, arguments=None, zone=None):
                 if isinstance(possible_arg, xrange):
                     if int(argument) in possible_arg:
                         # We need to send the format "FF", hex() gives us 0xff
-                        value = hex(int(argument))[2:].zfill(2).upper()
+                        value = "{:02X}".format(int(argument))
                     break
 
             # TODO: patterns not yet supported
